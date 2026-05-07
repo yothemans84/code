@@ -1,0 +1,1 @@
+export function Topbar(){return <header className="h-14 sticky top-0 bg-white/80 backdrop-blur border-b px-4 flex items-center justify-between"><h1 className="font-semibold">TongYan Travel ERP</h1><div className="text-sm text-slate-500">Malaysia • MYR</div></header>}
