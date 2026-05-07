@@ -1,23 +1,26 @@
-# Travel ERP
+# BP Holiday ERP (Malaysia Travel ERP SaaS)
 
-A lightweight Travel ERP starter built with FastAPI.
+Production-ready SaaS scaffold for Malaysian travel agencies using Next.js 15, TypeScript, Tailwind, shadcn-style components, Prisma/PostgreSQL, NextAuth, Recharts, and TanStack Table-ready patterns.
 
-## Features
-- Customer management
-- Trip booking management
-- Invoice tracking
-- Health endpoint for service checks
+## Modules
+Dashboard, Booking Management, Passenger Management, Payments, Tour Packages, Departures, Reports, Document Centre, AI Assistant, User Management.
 
-## Run
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn travel_erp.app:app --reload
-```
+## Key Features
+- Responsive sidebar layout
+- KPI dashboard
+- Booking CRUD via server actions + API
+- Payment and outstanding balance tracking
+- Role-based authentication model
+- CSV report export endpoint
+- Document upload endpoint
+- Reusable component-first architecture
 
-## API Endpoints
-- `GET /health`
-- `POST /customers`, `GET /customers`
-- `POST /trips`, `GET /trips`
-- `POST /invoices`, `GET /invoices`
+## Quick Start
+1. Copy `.env.example` to `.env`
+2. `npm install`
+3. `npx prisma migrate dev --name init`
+4. `npm run db:seed`
+5. `npm run dev`
+
+## Docker
+`docker compose up --build`
