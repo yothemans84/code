@@ -1,0 +1,4 @@
+"use client";
+import { useMemo } from "react";
+import { useReactTable, getCoreRowModel, ColumnDef, flexRender } from "@tanstack/react-table";
+export function BookingsTable({ data }:{data:any[]}){const columns=useMemo<ColumnDef<any>[]>(()=>[{accessorKey:"refNo",header:"Ref"},{accessorKey:"totalAmount",header:"Total"},{accessorKey:"paidAmount",header:"Paid"}],[]);const table=useReactTable({data,columns,getCoreRowModel:getCoreRowModel()});return <table className="w-full bg-white rounded"><thead>{table.getHeaderGroups().map(h=><tr key={h.id}>{h.headers.map(x=><th key={x.id} className="text-left p-2">{flexRender(x.column.columnDef.header,x.getContext())}</th>)}</tr>)}</thead><tbody>{table.getRowModel().rows.map(r=><tr key={r.id}>{r.getVisibleCells().map(c=><td key={c.id} className="p-2">{flexRender(c.column.columnDef.cell ?? c.column.columnDef.accessorKey,c.getContext())}</td>)}</tr>)}</tbody></table>}
